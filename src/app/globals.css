@@ -1,21 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  /* Default Color Variables */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ec0808;
+  --primary-color: #ee2761; /* Primary accent color */
+  --secondary-color: #061738; /* Secondary color */
+  --text-color: #606060; /* Text color */
+
+  /* Border and Shadows */
+  --border-color: #e7e7e7; /* Default border color */
+  --border-radius: 10px; /* Default border radius */
+  --border-width: 1px; /* Default border width */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Default box-shadow */
+
+  /* Dark Mode Colors */
+  --dark-background: #181818; /* Dark mode background */
+  --dark-foreground: #ededed; /* Dark mode foreground */
+  --dark-text-color: #ffffff; /* Dark mode text color */
+  --dark-border-color: #444444; /* Dark mode border color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Override variables for dark mode */
+    --background: var(--dark-background);
+    --foreground: var(--dark-foreground);
+    --text-color: var(--dark-text-color);
+    --border-color: var(--dark-border-color);
+    --box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-color);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Jost", serif;
+}
+
+.jost {
+  font-family: "Jost", sans-serif;
+}
+
+button {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  color: white;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Adding styles for elements */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  border: 1px solid var(--border-color);
 }
